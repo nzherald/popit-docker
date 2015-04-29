@@ -15,9 +15,11 @@ RUN git clone https://github.com/mysociety/popit /opt/popit
 
 WORKDIR /opt/popit
 
+RUN make node-modules
+
 RUN sudo gem install sass --version=3.2.14 --no-rdoc --no-ri
 RUN sudo gem install compass --version=0.12.2 --no-rdoc --no-ri
 
-RUN make node-modules
+RUN make css
 
 CMD ["npm", "start"]
